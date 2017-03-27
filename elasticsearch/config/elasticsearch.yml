@@ -53,10 +53,14 @@
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #network.host: 0.0.0.0
 # Search pool
+thread_pool.bulk.queue_size: 10000
+thread_pool.index.queue_size: 10000
+thread_pool.search.queue_size: 10000
+thread_pool.get.queue_size: 10000
+
 
 xpack.security.enabled: false
 xpack.watcher.execution.default_throttle_period: 1m
-indices.memory.index_buffer_size: 40
 script.inline: true
 script.stored: true
 script.file:   true
