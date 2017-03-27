@@ -69,7 +69,6 @@ script.update: true
 script.engine.groovy.inline:          true
 script.engine.groovy.stored.search:   true
 script.engine.groovy.stored.aggs:     true
-
 #script.engine.mustache.stored.search: true
 
 
