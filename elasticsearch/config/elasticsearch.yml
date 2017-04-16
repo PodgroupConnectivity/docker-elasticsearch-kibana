@@ -53,10 +53,11 @@
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #network.host: 0.0.0.0
 # Search pool
-thread_pool.bulk.queue_size: 1000
-thread_pool.index.queue_size: 1000
-thread_pool.search.queue_size: 1000
-thread_pool.get.queue_size: 1000
+thread_pool.bulk.queue_size: 100000
+thread_pool.index.queue_size: 100000
+thread_pool.search.queue_size: 100000
+thread_pool.get.queue_size: 100000
+
 
 
 xpack.security.enabled: false
