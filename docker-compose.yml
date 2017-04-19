@@ -7,7 +7,7 @@ services:
     networks:
       - elk
     volumes:
-      - elasdata:/usr/share/elasticsearch/data
+      - elasdata1:/usr/share/elasticsearch/data
   kibana:
     build: kibana/
     ports:
@@ -18,7 +18,7 @@ services:
       - elasticsearch
 
 volumes:
-  elasdata:
+  elasdata1:
     driver: local
 
 networks:
