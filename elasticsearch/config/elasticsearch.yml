@@ -28,7 +28,7 @@
 #docker.elastic.co/elasticsearch/
 # ----------------------------------- Paths ------------------------------------
 #
-# Path to directory where to store the data (separate multiple locations by comma):
+# Path to directory where to store the data 127.0.0.1(separate multiple locations by comma):
 #
 #path.data: /path/to/data
 #
@@ -60,7 +60,7 @@ thread_pool.get.queue_size: 100000
 
 
 
-xpack.security.enabled: false
+xpack.security.enabled: true
 xpack.watcher.execution.default_throttle_period: 1m
 script.inline: true
 script.stored: true
