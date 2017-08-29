@@ -1,7 +1,9 @@
 FROM elasticsearch:latest
-RUN bin/elasticsearch-plugin install x-pack --batch
-
-COPY config/elasticsearch.yml /etc/elasticsearch/
-ENV ES_JAVA_OPTS="-Des.path.conf=/etc/elasticsearch -Xms2g -Xmx2g"
-
-CMD ["-E", "network.host=0.0.0.0", "-E", "discovery.zen.minimum_master_nodes=1"]
+MAINTAINER Jose Enrique Ruiz Navarro, quique.ruiz@podgroup.com
+ENV ELASTICSEARCH_CONFIG /etc/elasticsearch
+COPY config/elasticsearch.yml ${ELASTICSEARCH_CONFIG}
+COPY scripts/docker-entrypoint.sh /docker-entrypoint.sh
+ENV PATH=$PATH:/usr/share/elasticsearch/bin/elasticsearch
+ENV ES_JAVA_OPTS="-Des.path.conf=/etc/elasticsearch -Xms1g -Xmx1g"
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["elasticsearch"]

@@ -1,0 +1,18 @@
+version: '2'
+services:
+  elasticsearch1:
+    image: podgroup/elasticsearch:latest
+    container_name: elasticsearch
+    environment:
+      - ELASTICSEARCH_NAME=jeje
+      - ELASTICSEARCH_BIND_ADDRESS=0.0.0.0
+      - ELASTICSEARCH_CLUSTER=localhost
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 3g
+    volumes:
+      - ./data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
