@@ -34,6 +34,14 @@ else
         sed -i -e "s/^#network.host: 0.0.0.0/network.host: $ELASTICSEARCH_BIND_ADDRESS/" $ELASTICSEARCH_CONFIG/elasticsearch.yml
 fi
 
+if [ -z "$ELASTICSEARCH_PUBLISH_ADDRESS" ]; then
+        echo "Localhost PUBLISH"
+else
+        sed -i -e "s/^#network.publish_host: 0.0.0.0/network.publish_host: $ELASTICSEARCH_PUBLISH_ADDRESS/" $ELASTICSEARCH_CONFIG/elasticsearch.yml
+fi
+
+
+
 if [ -z "$ELASTICSEARCH_CLUSTER" ]; then
         echo "No cluster"
 else
@@ -48,8 +56,5 @@ else
 fi
 
 
-
-# As argument is not related to elasticsearch,
-# then assume that user wants to run his own process,
-# for example a `bash` shell to explore this image
+echo $@
 exec "$@"

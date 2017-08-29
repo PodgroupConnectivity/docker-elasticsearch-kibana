@@ -6,6 +6,7 @@ services:
     environment:
       - ELASTICSEARCH_NAME=jeje
       - ELASTICSEARCH_BIND_ADDRESS=0.0.0.0
+      - ELASTICSEARCH_PUBLISH_ADDRESS=0.0.0.0
       - ELASTICSEARCH_CLUSTER=localhost
     ulimits:
       memlock:

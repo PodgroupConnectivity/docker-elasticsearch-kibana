@@ -53,6 +53,7 @@ node.master: true
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #network.host: 0.0.0.0
+#network.publish_host: 0.0.0.0
 # Search pool
 # thread_pool.bulk.queue_size: 100000
 # thread_pool.index.queue_size: 100000
