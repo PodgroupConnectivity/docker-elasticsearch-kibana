@@ -42,6 +42,8 @@
 #
 bootstrap.memory_lock: true
 node.master: true
+path.repo: ["/usr/share/elasticsearch/data/backups"]
+
 #
 # Make sure that the heap size is set to about half the memory available
 # on the system and that the owner of the process is allowed to use this
